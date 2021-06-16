@@ -24,6 +24,7 @@ library(cowplot)
 library(ggpubr)
 #library(postscriptFonts)
 library(ggseqlogo)
+library(biocgenerics)
 library(extrafont)
 loadfonts(device = "pdf", quiet = FALSE)
 
@@ -46,7 +47,7 @@ aa2df <- function(dss){
 
 # turning AAsequences (fasta) into dataframe
 dss2df <- function(dss){
-  return(data.frame(width = width(dss), names = names(dss), seq = as.character(dss), stringsAsFactors = FALSE))
+  return(data.frame(width = BiocGenerics::width(dss), names = names(dss), seq = as.character(dss), stringsAsFactors = FALSE))
 }
 
 
